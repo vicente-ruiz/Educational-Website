@@ -1,0 +1,76 @@
+/* Section Divider */
+.section-divider 
+{
+    border: none;
+    height: 2px;
+    background-color: black;
+    margin: 30px 0;
+}
+
+/* Learn More Button */
+.learn-more-btn 
+{
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.learn-more-btn:hover 
+{
+    background-color: #0056b3;
+}
+
+.keylogger-diagram 
+{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: -5px; /* adjust value as needed */
+}
+
+.credential-diagram 
+{
+    max-height: 500px; /* Adjust this value as needed */
+    width: auto; /* Keeps aspect ratio */
+    display: block; /* Centers the image */
+    margin: 0 auto; /* Centers horizontally */
+}
+
+
+
+
+
+
+/* We're no longer using the sources section */
+/* Sources Section */
+/* .source 
+{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.source ol 
+{
+    padding-left: 20px;
+    display: inline-block;
+    text-align: left;
+}
+
+.source li 
+{
+    margin-bottom: 5px;
+}
+
+.source a 
+{
+    text-decoration: none;
+} */

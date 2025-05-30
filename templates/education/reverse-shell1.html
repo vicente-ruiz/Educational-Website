@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Shell Techniques</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shared/shared.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/slideshow.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/modules.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shared/footnotes.css') }}">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <div class="navbar">
+        <span class="menu-toggle">&#9776;</span>
+        <a href="/" class="nav-title">Capstone Project</a>
+    </div>
+
+    {% include 'includes/hamburger_menu.html' %}
+
+    <div class="container">
+        <h1>Reverse Shell Techniques</h1>
+
+        <!-- Slideshow Container -->
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/education/reverse_shell4.jpeg') }}" alt="Reverse Shell Setup">
+                <div class="caption">Common tools used for reverse shells. <span class="credit">Cybersecurity Insights</span></div>
+                <div class="image-counter">1 of 3</div>
+            </div>
+
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/education/reverse_shell5.jpeg') }}" alt="Reverse Shell Execution">
+                <div class="caption">How attackers establish a remote connection. <span class="credit">Threat Intel Labs</span></div>
+                <div class="image-counter">2 of 3</div>
+            </div>
+
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/education/reverse_shell6.jpeg') }}" alt="Reverse Shell Defense">
+                <div class="caption">Detecting and mitigating reverse shell threats. <span class="credit">Security Weekly</span></div>
+                <div class="image-counter">3 of 3</div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+
+        <h3 style="text-align: left;">Key Techniques Used in Reverse Shells</h3>
+        <ul style="text-align: left;">
+            <li>🔹 Attackers use netcat, PowerShell, and bash scripts to establish reverse shells.</li>
+            <li>🔹 Reverse shells bypass inbound firewall rules, making them harder to detect.</li>
+            <li>🔹 Encrypting traffic can further hide malicious activity.</li>
+        </ul>
+
+        <h3 style="text-align: left;">Test Your Knowledge</h3>
+        <div class="quiz-box" style="text-align: left;">
+            <form id="quiz">
+                <p>1. Which tool is commonly used to create a reverse shell?</p>
+                <input type="radio" name="q1" value="Netcat"> Netcat <br>
+                <input type="radio" name="q1" value="Excel"> Excel <br>
+                <input type="radio" name="q1" value="PowerPoint"> PowerPoint <br>
+                <input type="radio" name="q1" value="Notepad"> Notepad <br><br>
+
+                <p>2. Why are reverse shells difficult to detect?</p>
+                <input type="radio" name="q2" value="They use encrypted outbound connections"> They use encrypted outbound connections <br>
+                <input type="radio" name="q2" value="They require physical access"> They require physical access <br>
+                <input type="radio" name="q2" value="They only work on personal devices"> They only work on personal devices <br>
+                <input type="radio" name="q2" value="They need admin privileges to run"> They need admin privileges to run <br><br>
+            </form>
+            <button onclick="submitQuiz()">Submit Quiz</button>
+            <p id="quiz-result"></p>
+        </div>
+
+        <!-- Module Navigation Buttons -->
+        <div class="module-nav-container">
+            <a href="/education/reverse-shell" class="module-btn prev-module">Module 1: Introduction to Reverse Shells</a>
+            <a href="/education/reverse-shell2" class="module-btn next-module">Module 3: Reverse Shell Countermeasures</a>
+        </div>
+        
+    </div>
+
+    {% include 'includes/footnotes.html' %}
+
+    <script src="{{ url_for('static', filename='js/shared/menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/education/slideshow.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/education/quiz.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/education/dropdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/shared/footnotes.js') }}"></script>
+    
+</body>
+</html>

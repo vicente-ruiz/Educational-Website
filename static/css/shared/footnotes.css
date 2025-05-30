@@ -1,0 +1,55 @@
+/* Footnotes */
+.footnote 
+{
+    font-size: 10px;
+    vertical-align: super;
+    cursor: pointer; /* Makes footnote clickable */
+    color: blue;
+}
+
+/* Footnote Popups */
+.footnote-popup
+{
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 280px;
+    text-align: left;
+    z-index: 1000;
+    border: 1px solid #ccc;
+}
+
+/* Footnote Content */
+.footnote-content
+{
+    position: relative;
+    font-size: 14px;
+    padding-right: 25px; /* Prevents text from overlapping the close button */
+}
+
+/* Close Button (X) */
+.close-btn
+{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #ddd;
+    color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover 
+{
+    background-color: #bbb;
+}

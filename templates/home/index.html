@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shared/shared.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shared/footnotes.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="navbar">
+        <span class="menu-toggle">&#9776;</span>
+        <a href="/" class="nav-title">Capstone Project</a>
+    </div>
+
+    {% include 'includes/hamburger_menu.html' %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <h1>Overview</h1>
+        <h2>Educational Website</h2>
+        <p>This educational website is designed to raise awareness about common cybersecurity threats through interactive modules. It covers keylogging, reverse shell attacks, and credential manipulation, providing clear explanations, diagrams, videos, and quizzes to help users understand how these attacks work and how to stay protected.</p>
+
+        <hr class="section-divider">
+
+        <h1>Keylogger</h1>
+        <h2>Introduction</h2>
+        <p>Keyloggers, such as the Pico Ducky, are tools designed to record keystrokes on a target device. While they have legitimate uses, such as monitoring employee productivity or parental control, they are often associated with malicious activities like data theft.<span class="footnote" data-footnote="popup-source1">[1]</span> This research aims to provide an in-depth understanding of how a Pico Ducky operates, its logging methods, evasion techniques, and the ethical implications of its use.</p>
+
+        <img src="{{ url_for('static', filename='images/home/diagram/keylogger.jpg') }}" alt="Keylogger Attack Diagram" class="keylogger-diagram">
+
+        <a href="/education/keylogger" class="learn-more-btn">Learn More</a>
+
+        <hr class="section-divider">
+
+        <h1>Reverse Shell Attacks</h1>
+        <h2>Introduction</h2>
+        <p>Reverse shell attacks allow an attacker to establish remote access to a compromised system. This method is widely used in post-exploitation stages and red team assessments.</p>
+
+        <h3>Basic Reverse Shell Operation</h3>
+        <p>An attacker initiates a connection to a listening server, gaining full remote control over the compromised machine.</p>
+
+        <img src="{{ url_for('static', filename='images/home/diagram/reverse_shell.jpg') }}" alt="Credential Manipulation Attack Diagram" class="credential-diagram">
+
+        <a href="/education/reverse-shell" class="learn-more-btn">Learn More</a>
+
+        <hr class="section-divider">
+
+        <h1>Credential Manipulation</h1>
+        <h2>Introduction</h2>
+        <p>Credential manipulation involves modifying or stealing authentication credentials to gain unauthorized access to a system.</p>
+
+        <h3>Techniques</h3>
+        <p>Common methods include credential stuffing, password spraying, and privilege escalation.</p>
+
+        <img src="{{ url_for('static', filename='images/home/diagram/credential_manipulation.jpg') }}" alt="Credential Manipulation Attack Diagram" class="credential-diagram">
+
+        <a href="/education/credential-manipulation" class="learn-more-btn">Learn More</a>
+    </div>
+
+    {% include 'includes/footnotes.html' %}
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/shared/menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/shared/footnotes.js') }}"></script>
+</body>
+</html>

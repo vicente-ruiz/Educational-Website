@@ -1,0 +1,39 @@
+/* Demo Related CSS */
+.demo-box 
+{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px; /* Adds spacing between elements */
+}
+
+.fetch-button 
+{
+    width: 100%; /* Makes button full width of the text box */
+    max-width: 400px; /* Prevents it from being too big */
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.fetch-button:hover 
+{
+    background-color: #0056b3;
+}
+
+textarea
+{
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    display: block;
+    margin: 10px auto;
+}

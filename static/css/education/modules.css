@@ -1,0 +1,37 @@
+/* Module Navigation Container */
+.module-nav-container 
+{
+    display: flex;
+    justify-content: space-between; /* Ensures buttons are on opposite sides */
+    margin-top: 20px; /* Adds spacing below the quiz */
+}
+
+/* Module Navigation Buttons */
+.module-btn 
+{
+    background: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    /* font-size: 16px;
+    font-weight: bold; */
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.module-btn:hover 
+{
+    background: #0056b3;
+}
+
+/* Positioning for Previous and Next Module Buttons */
+.prev-module 
+{
+    margin-right: auto; /* Aligns to the left */
+}
+
+.next-module 
+{
+    margin-left: auto; /* Aligns to the right */
+}

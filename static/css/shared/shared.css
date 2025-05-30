@@ -1,0 +1,118 @@
+/* General styling */
+body
+{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Makes background creamy white instead of fully white as it's harsh on the eyes */
+    /* color: #333; */ /* Color for txt */
+}
+
+/* Navigation Bar */
+.navbar
+{
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Align hamburger left and title center */
+.menu-toggle 
+{
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+    padding: 0 15px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-title 
+{
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+/* Side Menu */
+.side-menu 
+{
+    display: none;
+    background-color: #2f2f2f; /* Slightly lighter than pure black */
+    padding: 15px 0;
+    text-align: center; /* Center all menu content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional subtle shadow */
+}
+
+.side-menu.open 
+{
+    display: block;
+}
+
+.side-menu ul 
+{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.side-menu a 
+{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.side-menu a:hover,
+.submenu-toggle:hover
+{
+    background-color: #444; /* Hover effect */
+}
+
+/* Submenus */
+.submenu 
+{
+    display: none;
+    padding-left: 15px;
+}
+
+.submenu.open 
+{
+    display: block;
+}
+
+.submenu-toggle {
+    color: white; /* Match the main link color */
+    cursor: pointer;
+    display: block;
+    padding: 8px 0;
+    font-size: 16px;
+}
+
+/* Page container */
+.container
+{
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 18px 20px;
+    /* Optional background style is commented out */
+    /* background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+}
+
+/* Headings */
+h1, h2 
+{
+    color: #222;
+}

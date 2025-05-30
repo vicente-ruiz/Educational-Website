@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Education</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shared/shared.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/modules.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shared/footnotes.css') }}">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <div class="navbar">
+        <span class="menu-toggle">&#9776;</span>
+        <a href="/" class="nav-title">Capstone Project</a>
+    </div>
+
+    {% include 'includes/hamburger_menu.html' %}
+
+    <div class="container">
+        <h1>Learn About Keylogging</h1>
+
+        <h2>Introduction to Keylogging</h2>
+
+        <!-- THIS IS GOING TO BE THE VIDEO WE MAKE OF THE ACTUAL ATTACK -->
+        <h3>Educational Video</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ADYkvHMf0F0" frameborder="0" allowfullscreen></iframe>
+
+        <!-- THIS IS THE INFO THAT WAS IN THE HOME PAGE, LETS DO THIS FOR THE THREE SCRIPTS WE HAVE JUST FORMAT IT 
+        AND MAKE IT LOOK BETTER I JUST MOVED THE WHAT YOU HAD IN THE HOME PAGE -->
+        
+        <h2>Keylogger Techniques and Logging Methods</h2>
+
+        <h3>Hardware-Based Keylogging</h3>
+        <p>The Pico Ducky exploits the Human Interface Device (HID) protocol, allowing it to mimic a keyboard. Once connected, it executes scripts to log keystrokes or deliver payloads.<span class="footnote" data-footnote="popup-source1">[1]</span></p>
+
+        <h3>Software-Based Keylogging</h3>
+        <p>Software keyloggers can be implemented in Python using libraries like <code>pynput</code> or <code>keyboard</code>. These programs monitor and record keystrokes, storing the data locally or transmitting it to a remote server.<span class="footnote" data-footnote="popup-source3">[3]</span></p>
+
+        <h3>Logging Methods</h3>
+        <ul>
+            <li><strong>Local Storage:</strong> Keystrokes are saved in a file on the target device.<span class="footnote" data-footnote="popup-source2">[2]</span></li>
+            <li><strong>Remote Transmission:</strong> Data is sent to a remote server via HTTP, FTP, or email.<span class="footnote" data-footnote="popup-source1">[1]</span></li>
+            <li><strong>Clipboard Logging:</strong> Captures clipboard content, including copied passwords or sensitive data.<span class="footnote" data-footnote="popup-source3">[3]</span></li>
+        </ul>
+
+        <h2>Common Evasion Techniques</h2>
+        <p>Keyloggers often employ evasion techniques to avoid detection:</p>
+        <ul>
+            <li><strong>Process Hiding:</strong> The keylogger disguises itself as a legitimate process.<span class="footnote" data-footnote="popup-source1">[1]</span></li>
+            <li><strong>Encryption:</strong> Logged data is encrypted to prevent analysis.<span class="footnote" data-footnote="popup-source2">[2]</span></li>
+            <li><strong>Anti-Debugging:</strong> Techniques are used to hinder reverse engineering.<span class="footnote" data-footnote="popup-source3">[3]</span></li>
+            <li><strong>Polymorphism:</strong> The keylogger changes its code structure to evade signature-based detection.<span class="footnote" data-footnote="popup-source1">[1]</span></li>
+        </ul>
+
+        <h2>Project Scope and Objectives</h2>
+        <p>The primary objective of this project is to educate students on the inner workings of a Pico Ducky and keyloggers in general. The scope includes:</p>
+        <ul>
+            <li><strong>Technical Explanation:</strong> How keyloggers work, including hardware and software implementations.<span class="footnote" data-footnote="popup-source2">[2]</span></li>
+            <li><strong>Ethical Considerations:</strong> Highlighting the legal and ethical implications of using keyloggers.<span class="footnote" data-footnote="popup-source1">[1]</span></li>
+            <li><strong>Educational Website:</strong> Presenting the material in a concise, engaging, and professional manner.<span class="footnote" data-footnote="popup-source3">[3]</span></li>
+        </ul>
+
+        <h2>Legal and Ethical Considerations</h2>
+        <p>Keyloggers can violate privacy laws and ethical standards if used without consent. It is crucial to emphasize that this project is strictly for educational purposes. Unauthorized use of keyloggers is illegal and punishable by law.<span class="footnote" data-footnote="popup-source1">[1]</span></p>
+
+        <h2>Architecture Outline</h2>
+
+        <h3>Python Keylogger</h3>
+        <ul>
+            <li>Use the <code>pynput</code> library to capture keystrokes.<span class="footnote" data-footnote="popup-source2">[2]</span></li>
+            <li>Implement local storage and remote transmission methods.<span class="footnote" data-footnote="popup-source3">[3]</span></li>
+        </ul>
+
+        <h3>Server Setup</h3>
+        <ul>
+            <li>Set up a Flask server to receive and store logged data.<span class="footnote" data-footnote="popup-source1">[1]</span></li>
+            <li>Ensure secure transmission using HTTPS.<span class="footnote" data-footnote="popup-source2">[2]</span></li>
+        </ul>
+
+        <h3>Website Structure</h3>
+        <ul>
+            <li><strong>Homepage:</strong> Overview of the project.<span class="footnote" data-footnote="popup-source3">[3]</span></li>
+            <li><strong>Technical Details:</strong> Explanation of keylogger techniques and architecture.<span class="footnote" data-footnote="popup-source1">[1]</span></li>
+            <li><strong>Ethical Considerations:</strong> Discussion on legal and ethical issues.<span class="footnote" data-footnote="popup-source2">[2]</span></li>
+            <li><strong>Interactive Demos:</strong> Simulated keylogger behavior (non-malicious).<span class="footnote" data-footnote="popup-source3">[3]</span></li>
+        </ul>
+
+        <h2>Analogy for Better Understanding</h2>
+        <p>Think of a keylogger as a spy in a busy office. The spy (keylogger) listens to every conversation (keystrokes) and writes down what is said (logs data). Sometimes, the spy disguises themselves as a regular employee (evasion techniques) to avoid detection. Just as a spy’s actions can be unethical or illegal, so too can the use of keyloggers without proper authorization.<span class="footnote" data-footnote="popup-source1">[1]</span></p>
+
+        <h2>Conclusion</h2>
+        <p>This project provides a comprehensive understanding of keyloggers, focusing on the Pico Ducky. By exploring its techniques, logging methods, and ethical implications, students will gain valuable insights into cybersecurity. The accompanying website will serve as an educational resource, presenting the material in a professional and engaging manner.<span class="footnote" data-footnote="popup-source2">[2]</span></p>
+
+        
+        <h3 style="text-align: left;">Key Tips to Stay Safe</h3>
+        <ul style="text-align: left;">
+            <li>🔹 Always verify links before clicking.</li>
+            <li>🔹 Never plug in unknown USB devices.</li>
+            <li>🔹 Be wary of emails urging immediate action.</li>
+        </ul>
+
+        <h3 style="text-align: left;">Test Your Knowledge</h3>
+        <div class="quiz-box" style="text-align: left;">
+            <form id="quiz">
+                <p>1. Why shouldn't you pick up and use a random USB?</p>
+                <input type="radio" name="q1" value="USBs can contain malware"> USBs can contain malware <br>
+                <input type="radio" name="q1" value="They're probably broken"> They're probably broken <br>
+                <input type="radio" name="q1" value="USBs are too expensive to replace"> USBs are too expensive to replace <br>
+                <input type="radio" name="q1" value="It could be a legal issue"> It could be a legal issue <br><br>
+
+                <p>2. What is a common sign of a phishing email?</p>
+                <input type="radio" name="q2" value="The email has perfect grammar and spelling"> The email has perfect grammar and spelling <br>
+                <input type="radio" name="q2" value="It comes from your boss"> It comes from your boss <br>
+                <input type="radio" name="q2" value="Unusual sender email addresses"> Unusual sender email addresses <br>
+                <input type="radio" name="q2" value="It includes a funny meme"> It includes a funny meme <br><br>
+            </form>
+            <button onclick="submitQuiz()">Submit Quiz</button>
+            <p id="quiz-result"></p>
+        </div>
+
+        <!-- Module Navigation Buttons -->
+        <div class="module-nav-container">
+            <!-- Only show "Next Module" button, since this is Module 1 -->
+            <a href="/education/keylogger_demo" class="module-btn next-module">Module 2: Keylogger Demo</a>
+        </div>
+    </div>
+
+    {% include 'includes/footnotes.html' %}
+    
+    <!-- In case we add a slideshow here uncomment the script
+    <script src="{{ url_for('static', filename='js/education/slideshow.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='js/shared/menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/education/quiz.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/education/dropdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/shared/footnotes.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Hide images by default */
+.slide {
+    display: none;
+    position: relative; /* This anchors .caption and .image-counter inside */
+    overflow: hidden; /* Prevents caption from spilling out */
+}
+
+/* Style for images */
+.slide img {
+    display: block; /* Removes small gaps under images in some browsers */
+    width: 100%;
+    height: auto;
+    /* border-radius: 5px; */ /* Makes the img have rounded corners. Would also have to add to slide above for caption background to match too */
+}
+
+/* Caption box */
+.caption {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%; /* Ensure full width */
+    max-width: 100%; /* Prevent overflow */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box; /* Ensures padding is included in width */
+    word-wrap: break-word; /* Prevents text overflow */
+}
+
+/* Credit inside caption */
+.caption .credit {
+    font-size: 12px;
+    color: #ddd;
+    display: block;
+}
+
+/* Image counter */
+.image-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    border-radius: 3px;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

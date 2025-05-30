@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keylogger Demo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shared/shared.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/modules.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/demo.css') }}">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <div class="navbar">
+        <span class="menu-toggle">&#9776;</span>
+        <a href="/" class="nav-title">Capstone Project</a>
+    </div>
+
+    {% include 'includes/hamburger_menu.html' %}
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+        <h1>Keylogger Demo</h1>
+        <p>Start typing anywhere on this page. This simulates how a phishing site can record keystrokes.</p>
+
+        <!-- Wrap everything inside a centered div -->
+        <div class="demo-box">
+            <!-- Display typed text -->
+            <textarea id="keystrokeDisplay" placeholder="Your typed text will show here..." readonly></textarea>
+
+            <!-- Button centered and placed below the first textarea -->
+            <button class="fetch-button" onclick="fetchStolenData()">Show Stolen Data from Test Computer</button>
+
+            <!-- Display stolen data here -->
+            <textarea id="stolenDataDisplay" placeholder="Stolen data will appear here..." readonly></textarea>
+        </div>
+
+        <!-- Module Navigation Buttons - Now properly inside container -->
+        <div class="module-nav-container">
+            <a href="/education/keylogger" class="module-btn prev-module">Module 1: Introduction to Keylogging</a>
+        </div>
+    </div>
+
+    <!-- Linking the keylogger script -->
+    <script src="{{ url_for('static', filename='js/education/keylogger.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/education/dropdown.js') }}"></script>
+
+    <script>
+        function fetchStolenData() 
+        {
+            fetch("/get_stolen_data")
+                .then(response => response.json())
+                .then(data => 
+                {
+                    if (data.error) 
+                    {
+                        console.error("Error fetching stolen data:", data.error);
+                        document.getElementById("stolenDataDisplay").value = "Error: " + data.error;
+                    } 
+                    else 
+                    {
+                        document.getElementById("stolenDataDisplay").value = data.stolen_text;
+                    }
+                })
+                .catch(error => 
+                {
+                    console.error("Fetch failed:", error);
+                    document.getElementById("stolenDataDisplay").value = "Error: Could not fetch data";
+                });
+        }
+    </script>
+
+    <script src="{{ url_for('static', filename='js/shared/menu.js') }}"></script>
+    
+</body>
+</html>

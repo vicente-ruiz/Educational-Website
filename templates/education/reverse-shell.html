@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Shell Education</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shared/shared.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/slideshow.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/education/modules.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/shared/footnotes.css') }}">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <div class="navbar">
+        <span class="menu-toggle">&#9776;</span>
+        <a href="/" class="nav-title">Capstone Project</a>
+    </div>
+
+    {% include 'includes/hamburger_menu.html' %}
+
+    <div class="container">
+        <h1>Learn About Reverse Shell</h1>
+
+        <h2>Introduction to Reverse Shell</h2>
+        <h3>Educational Video</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7OnE5KJ9JNI" frameborder="0" allowfullscreen></iframe>
+
+        <h2>What is a Reverse Shell?</h2>
+        <p>A Reverse Shell enables an attacker to gain control of your system inside a protected network by scanning your network internally, installing network sniffers, and collecting your sensitive login credentials. If an attacker uses a reverse shell it can be challenging to locate, especially if they utilize protocols in the programs.<span class="footnote" data-footnote="popup-source4">[4]</span></p>
+
+        <h2>Concept of Reverse Shell</h2>
+        <p>In order for an attacker to collect data from an internal system, it needs to establish a communication tunnel that can sneak past security measures such as firewalls and intrusion detection. This allows an attacker to send your data outside your network into an external system.<span class="footnote" data-footnote="popup-source4">[4]</span></p>
+
+        <p>For an attacker to successfully extract data from an internal system, they must first establish a covert communication channel that bypasses security measures like firewalls and intrusion detection systems. This hidden tunnel enables unauthorized data transmission from within the network to an external system under the attacker's control. Cybercriminals often achieve this by exploiting vulnerabilities, disguising malicious traffic as legitimate communication, or leveraging encrypted tunnels to evade detection. Once the data leaves the network, it can be used for financial fraud, identity theft, corporate espionage, or other malicious purposes.<span class="footnote" data-footnote="popup-source4">[4]</span></p>
+
+        <h2>Attack Vectors</h2>
+        <p>Installing a reverse shell on a secure network isn't easy. The attacker's tactic often uses deception to get users to install a reverse shell without the user knowing. One common tactic is phishing, where an attacker sends emails containing malicious links or attachments that execute the installation.<span class="footnote" data-footnote="popup-source4">[4]</span></p>
+
+        <p>Another tactic that attackers use is physical access to a system by inserting a USB drive or CD-ROM with an auto-run installer to deploy the reverse shell without detection. Many organizations overlook the threat of unauthorized physical access, which can allow an attacker to compromise a system and maintain control over it.<span class="footnote" data-footnote="popup-source4">[4]</span></p>
+
+        <!-- Slideshow Container -->
+        <!-- <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/education/reverse_shell1.jpeg') }}" alt="Reverse Shell Attack Example">
+                <div class="caption">A reverse shell attack in action. <span class="credit">Getty Images</span></div>
+                <div class="image-counter">1 of 3</div>
+            </div>
+
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/education/reverse_shell2.jpeg') }}" alt="Common Malware Techniques">
+                <div class="caption">Common malware techniques used in attacks. <span class="credit">Denistangneyjr | Getty Images</span></div>
+                <div class="image-counter">2 of 3</div>
+            </div>
+
+            <div class="slide fade">
+                <img src="{{ url_for('static', filename='images/education/reverse_shell3.jpeg') }}" alt="Defending Against Malware">
+                <div class="caption">Security measures to prevent malware infections. <span class="credit">TechSource</span></div>
+                <div class="image-counter">3 of 3</div>
+            </div> -->
+
+            <!-- Navigation Arrows -->
+            <!-- <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div> -->
+
+        <!-- <h3 style="text-align: left;">Key Tips</h3>
+        <ul style="text-align: left;">
+            <li>🔹 Don't download files from untrusted sources.</li>
+            <li>🔹 Keep your software updated.</li>
+            <li>🔹 Use a reputable antivirus program.</li>
+        </ul> -->
+
+        <h3 style="text-align: left;">Test Your Knowledge</h3>
+        <div class="quiz-box" style="text-align: left;">
+            <form id="quiz">
+                <p>1. What is a common way malware spreads?</p>
+                <input type="radio" name="q1" value="Downloading unknown files"> Downloading unknown files <br>
+                <input type="radio" name="q1" value="Using a VPN"> Using a VPN <br>
+                <input type="radio" name="q1" value="Opening PDF files only"> Opening PDF files only <br>
+                <input type="radio" name="q1" value="Closing all browser tabs"> Closing all browser tabs <br><br>
+
+                <p>2. What helps prevent malware infections?</p>
+                <input type="radio" name="q2" value="Using outdated software"> Using outdated software <br>
+                <input type="radio" name="q2" value="Installing security patches"> Installing security patches <br>
+                <input type="radio" name="q2" value="Downloading every attachment"> Downloading every attachment <br>
+                <input type="radio" name="q2" value="Ignoring security warnings"> Ignoring security warnings <br><br>
+            </form>
+            <button onclick="submitQuiz()">Submit Quiz</button>
+            <p id="quiz-result"></p>
+        </div>
+
+        <!-- Module Navigation Buttons -->
+        <!-- <div class="module-nav-container">
+            <a href="/education/reverse-shell1" class="module-btn next-module">Module 2: Reverse Shell Techniques</a>
+        </div> -->
+    </div>
+
+    {% include 'includes/footnotes.html' %}
+
+    <script src="{{ url_for('static', filename='js/shared/menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/education/slideshow.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/education/quiz.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/education/dropdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/shared/footnotes.js') }}"></script>
+    
+</body>
+</html>
